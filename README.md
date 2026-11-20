@@ -1,1 +1,0 @@
-# Self-MagicMirror-on-Raspberry-Pi
