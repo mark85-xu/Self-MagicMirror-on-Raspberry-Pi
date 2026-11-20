@@ -1,0 +1,28 @@
+[class~="MMM-QuoteDisplay"] .quote-display {
+  color: var(--color-text-bright);
+  margin: 0 auto;
+  max-width: min(360px, calc(100vw - 32px));
+  text-align: left;
+}
+
+[class~="MMM-QuoteDisplay"] .quote-display-text {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.35;
+  margin: 0;
+}
+
+[class~="MMM-QuoteDisplay"] .quote-display-translation {
+  color: var(--color-text);
+  font-size: 0.88rem;
+  line-height: 1.4;
+  margin: 8px 0 0;
+}
+
+[class~="MMM-QuoteDisplay"] .quote-display-source {
+  color: var(--color-text-dimmed);
+  display: block;
+  font-size: 0.72rem;
+  font-style: normal;
+  margin-top: 10px;
+  text-align: right;
+}

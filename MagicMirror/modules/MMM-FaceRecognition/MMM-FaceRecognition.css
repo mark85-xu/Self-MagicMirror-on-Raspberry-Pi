@@ -1,0 +1,106 @@
+/* stylelint-disable selector-class-pattern -- MagicMirror module IDs. */
+.module.MMM-FaceRecognition {
+  inset: 50% var(--gap-body-right, 46px) auto auto !important;
+  max-width: calc(100vw - 32px);
+  padding: 12px 14px;
+  pointer-events: auto;
+  position: fixed !important;
+  transform: translateY(-50%);
+  width: min(360px, 28vw);
+}
+
+.MMM-FaceRecognition .face-card {
+  color: var(--color-text, #c4d0da);
+  text-align: left;
+}
+
+.MMM-FaceRecognition .face-heading,
+.MMM-FaceRecognition .face-person {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.MMM-FaceRecognition h2 {
+  color: var(--color-text-bright, #f4f7fa);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.MMM-FaceRecognition .face-status {
+  color: var(--color-text-dimmed, #a9bbc9);
+  font-size: 12px;
+}
+
+.MMM-FaceRecognition .face-status[data-state="running"] {
+  color: #a3e7c8;
+}
+
+.MMM-FaceRecognition .face-status[data-state="error"] {
+  color: #ffcf70;
+}
+
+.MMM-FaceRecognition .face-preview {
+  aspect-ratio: 4 / 3;
+  background: rgb(4 13 23 / 56%);
+  border-radius: 8px;
+  margin: 10px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.MMM-FaceRecognition .face-preview img {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.MMM-FaceRecognition .face-empty {
+  align-items: center;
+  display: flex;
+  font-size: 13px;
+  inset: 0;
+  justify-content: center;
+  padding: 20px;
+  position: absolute;
+  text-align: center;
+}
+
+.MMM-FaceRecognition [hidden] {
+  display: none !important;
+}
+
+.MMM-FaceRecognition .face-people {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.MMM-FaceRecognition .face-person strong {
+  color: var(--color-text-bright, #f4f7fa);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.MMM-FaceRecognition .face-person span {
+  flex-shrink: 0;
+  font-size: 11px;
+}
+
+.MMM-FaceRecognition .face-greeting {
+  border-top: 1px solid rgb(221 241 255 / 18%);
+  color: var(--color-text-dimmed, #a9bbc9);
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 9px 0 0;
+  padding-top: 8px;
+}
+
+@media (width <= 760px) {
+  .module.MMM-FaceRecognition {
+    inset: auto 16px 24px auto !important;
+    transform: none;
+    width: 220px;
+  }
+}

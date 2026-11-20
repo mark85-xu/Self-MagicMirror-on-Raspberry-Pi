@@ -1,0 +1,14 @@
+{
+	"latitude": 30.2741,
+	"longitude": 120.1551,
+	"locationName": "杭州市",
+	"timezone": "Asia/Shanghai",
+	"primaryTimeoutMs": 8000,
+	"fallbackTimeoutMs": 10000,
+	"cacheMs": 600000,
+	"apiHost": "YOUR_API_HOST.qweatherapi.com",
+	"keyId": "YOUR_CREDENTIAL_ID",
+	"developerId": "YOUR_DEVELOPER_ID",
+	"projectId": "YOUR_PROJECT_ID",
+	"privateKeyPath": "/home/pi/ed25519-private.pem"
+}

@@ -1,0 +1,174 @@
+/* stylelint-disable selector-class-pattern -- preserve the MagicMirror module name. */
+.MMM-WeatherCard {
+  pointer-events: auto;
+  position: relative;
+  z-index: 30;
+}
+
+.region .weather-data-source {
+  display: none !important;
+}
+
+.MMM-WeatherCard .weather-card {
+  backdrop-filter: blur(12px);
+  background: rgb(25 29 34 / 92%);
+  border: 1px solid rgb(244 247 250 / 18%);
+  border-radius: 9px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 34%);
+  box-sizing: border-box;
+  color: var(--color-text-bright);
+  margin-top: 10px;
+  max-width: calc(100vw - 32px);
+  padding: 9px 12px;
+  text-align: left;
+  transition:
+    width 180ms ease,
+    padding 180ms ease,
+    box-shadow 180ms ease;
+  width: 230px;
+}
+
+.MMM-WeatherCard .weather-summary {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.MMM-WeatherCard .weather-title-toggle {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  color: var(--color-text);
+  cursor: pointer;
+  flex: 1 1 auto;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  min-width: 0;
+  overflow: hidden;
+  padding: 2px 3px;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.MMM-WeatherCard .weather-current {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 9px;
+}
+
+.MMM-WeatherCard .weather-current .wi {
+  color: #e8c96f;
+  font-size: 25px;
+}
+
+.MMM-WeatherCard .weather-current-temperature {
+  color: var(--color-text-bright);
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.MMM-WeatherCard .weather-title-toggle:focus-visible {
+  outline: 3px solid #62c9f7;
+  outline-offset: 2px;
+}
+
+.MMM-WeatherCard .weather-forecast[hidden] {
+  display: none !important;
+}
+
+.MMM-WeatherCard .weather-forecast {
+  border-top: 1px solid rgb(244 247 250 / 16%);
+  display: grid;
+  gap: 5px;
+  margin-top: 10px;
+  padding-top: 8px;
+}
+
+.MMM-WeatherCard .weather-forecast-day {
+  align-items: center;
+  display: grid;
+  font-size: 14px;
+  gap: 9px;
+  grid-template-columns: minmax(45px, 1fr) 20px 42px 42px;
+  line-height: 1.4;
+}
+
+.MMM-WeatherCard .weather-forecast-day .wi {
+  color: #d6c16e;
+  font-size: 15px;
+  text-align: center;
+}
+
+.MMM-WeatherCard .weather-day-name {
+  color: var(--color-text);
+}
+
+.MMM-WeatherCard .weather-day-high {
+  color: var(--color-text-bright);
+  text-align: right;
+}
+
+.MMM-WeatherCard .weather-day-low {
+  color: var(--color-text-dimmed);
+  text-align: right;
+}
+
+.MMM-WeatherCard .weather-source,
+.MMM-WeatherCard .weather-status {
+  color: var(--color-text-dimmed);
+  font-size: 11px;
+  line-height: 1.4;
+  margin-top: 6px;
+  overflow-wrap: anywhere;
+}
+
+.MMM-WeatherCard .weather-source a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.MMM-WeatherCard .weather-source a:focus-visible {
+  outline: 2px solid #62c9f7;
+  outline-offset: 2px;
+}
+
+.MMM-WeatherCard .weather-attribution {
+  margin-left: 6px;
+}
+
+.MMM-WeatherCard .is-expanded {
+  background: rgb(25 29 34 / 97%);
+  box-shadow: 0 12px 30px rgb(0 0 0 / 42%);
+  padding: 12px 14px;
+  width: 250px;
+}
+
+.MMM-WeatherCard .is-expanded .weather-title-toggle {
+  color: var(--color-text-bright);
+}
+
+@media (width <= 480px) {
+  .MMM-WeatherCard .weather-card {
+    max-width: calc(100vw - 20px);
+    width: 220px;
+  }
+
+  .MMM-WeatherCard .is-expanded {
+    max-width: calc(100vw - 20px);
+    width: 250px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .MMM-WeatherCard .weather-card {
+    transition: none;
+  }
+}

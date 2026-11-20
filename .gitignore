@@ -1,0 +1,41 @@
+# Local editor and agent state
+.vscode/
+.idea/
+.superpowers/
+MagicMirror/docs/superpowers/
+
+# Dependencies, Python caches and build products
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+build/
+coverage/
+.husky/_/
+
+# Local credentials; examples remain versioned
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Runtime files and old snapshots
+*.log
+*.pid
+*.bak
+*.bak-*
+*.orig
+*.rej
+*.tar.gz
+.DS_Store
+Thumbs.db
+
+# Personal face data and the separately managed reference checkout
+/face-recognition/faces/
+/face-recognition/yolo-face/

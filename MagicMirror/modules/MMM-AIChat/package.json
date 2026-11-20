@@ -1,0 +1,11 @@
+{
+  "name": "mmm-aichat",
+  "version": "0.1.0",
+  "description": "A pure text AI chat module for MagicMirror using the DeepSeek API.",
+  "main": "MMM-AIChat.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "license": "MIT"
+}

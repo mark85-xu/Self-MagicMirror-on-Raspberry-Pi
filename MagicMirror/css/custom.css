@@ -1,0 +1,304 @@
+:root {
+  --color-text: #aeb7bf;
+  --color-text-dimmed: #a9bbc9;
+  --color-text-bright: #f4f7fa;
+  --glass-surface: rgb(8 22 38 / 46%);
+  --glass-surface-strong: rgb(8 19 32 / 64%);
+  --glass-edge: rgb(221 241 255 / 34%);
+  --glass-highlight: rgb(255 255 255 / 12%);
+  --glass-shadow: 0 12px 32px rgb(0 9 20 / 34%);
+  --glass-blur: 18px;
+  --glass-radius: 14px;
+  --font-size: 18px;
+  --font-size-small: 0.78rem;
+  --font-size-medium: 1.25rem;
+  --font-size-large: 2.55rem;
+  --font-size-xlarge: 3.15rem;
+  --gap-body-top: 42px;
+  --gap-body-right: 46px;
+  --gap-body-bottom: 34px;
+  --gap-body-left: 46px;
+  --gap-modules: 18px;
+}
+
+html {
+  background-color: #07111e;
+  background-image: linear-gradient(112deg, rgb(4 13 25 / 68%), rgb(4 13 25 / 48%) 52%, rgb(4 13 25 / 60%)), url("../assets/dashboard-wallpaper.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body {
+  background-color: transparent;
+  letter-spacing: 0;
+}
+
+.region.top.left,
+.region.bottom.left,
+.region.bottom.right {
+  max-width: 320px;
+}
+
+.region.top.right,
+.region.bottom.right {
+  max-width: min(360px, calc(100vw - var(--gap-body-right) - var(--gap-body-left)));
+  width: min(360px, calc(100vw - var(--gap-body-right) - var(--gap-body-left)));
+}
+
+.module {
+  margin-bottom: var(--gap-modules);
+}
+
+/* stylelint-disable selector-class-pattern -- MagicMirror module IDs retain their established names. */
+.module:not(.MMM-MusicPlayer, .MMM-WeatherCard, .MMM-AIChat, .newsfeed) {
+  backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+  background: var(--glass-surface);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--glass-radius);
+  box-shadow:
+    inset 0 1px 0 var(--glass-highlight),
+    var(--glass-shadow);
+  box-sizing: border-box;
+  padding: 12px 14px;
+}
+/* stylelint-enable selector-class-pattern */
+
+.module header {
+  border-bottom: 1px solid rgba(174, 183, 191, 0.35);
+  color: var(--color-text-dimmed);
+  font-size: 0.82rem;
+  letter-spacing: 0;
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  text-transform: none;
+}
+
+.module.MMM-QuoteDisplay {
+  max-width: min(280px, calc(100vw - var(--gap-body-right) - var(--gap-body-left)));
+  margin: 0 0 calc(var(--gap-modules) + 10px) auto;
+  padding: 9px 11px;
+  width: min(280px, calc(100vw - var(--gap-body-right) - var(--gap-body-left)));
+}
+
+.module.MMM-QuoteDisplay .quote-display {
+  max-width: 100%;
+}
+
+.module.MMM-QuoteDisplay .quote-display-text {
+  font-size: clamp(0.9rem, 1.05vw, 1rem);
+}
+
+.module.MMM-QuoteDisplay .quote-display-translation {
+  font-size: 0.78rem;
+  margin-top: 6px;
+}
+
+.module.MMM-QuoteDisplay .quote-display-source {
+  font-size: 0.65rem;
+  margin-top: 6px;
+}
+
+.clock .time {
+  color: var(--color-text-bright);
+  font-size: 2.85rem;
+  line-height: 1;
+}
+
+.clock .date {
+  color: var(--color-text);
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+
+.calendar table,
+.weather table {
+  font-size: 0.82rem;
+  line-height: 1.22;
+}
+
+.calendar .title,
+.calendar .time {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.compliments {
+  color: var(--color-text-bright);
+  font-size: 2rem;
+  line-height: 1.18;
+  max-width: 420px;
+  text-align: center;
+}
+
+.weather .current {
+  margin-bottom: 10px;
+}
+
+.weather .large {
+  font-size: 2.6rem;
+}
+
+.newsfeed {
+  font-size: 1rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.newsfeed .sourceTitle,
+.newsfeed .newsfeed-desc {
+  color: var(--color-text-dimmed);
+  font-size: 0.75rem;
+}
+
+.MMM-PiStatus .pi-status {
+  min-width: 250px;
+}
+
+.region.bottom.right .module.MMM-PiStatus {
+  margin-left: auto;
+  max-width: 100%;
+  width: fit-content;
+}
+
+.MMM-PiStatus .pi-status-grid {
+  display: grid;
+  gap: 6px;
+}
+
+.MMM-PiStatus .pi-status-row {
+  align-items: baseline;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  line-height: 1.2;
+}
+
+.MMM-PiStatus .label {
+  color: var(--color-text-dimmed);
+  font-size: 0.78rem;
+}
+
+.MMM-PiStatus .value {
+  color: var(--color-text-bright);
+  font-size: 0.9rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.MMM-PiStatus .value.warn {
+  color: #ffcf70;
+}
+
+.MMM-PiStatus .value.hot {
+  color: #ff8a70;
+}
+
+.module.newsfeed {
+  --news-card-width: 360px;
+
+  animation: news-card-enter 220ms ease-out both;
+  backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+  background: var(--glass-surface-strong);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--glass-radius);
+  box-sizing: border-box;
+  box-shadow:
+    inset 0 1px 0 var(--glass-highlight),
+    var(--glass-shadow);
+  margin: 0;
+  max-width: calc(100vw - 48px);
+  padding: 14px 16px;
+  width: var(--news-card-width);
+}
+
+.module.newsfeed > div {
+  overflow: hidden;
+}
+
+.module.newsfeed .newsfeed-source {
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.module.newsfeed .newsfeed-title {
+  animation: news-title-scroll 18s linear 1s infinite;
+  display: block;
+  text-align: left;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.module.newsfeed .newsfeed-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.module.newsfeed .newsfeed-title a:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid #62c9f7;
+  outline-offset: 3px;
+}
+
+.module.newsfeed:hover .newsfeed-title,
+.module.newsfeed:focus-within .newsfeed-title {
+  animation-play-state: paused;
+}
+
+@keyframes news-title-scroll {
+  from {
+    transform: translateX(360px);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes news-card-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .module.newsfeed {
+    animation: none;
+  }
+
+  .module.newsfeed .newsfeed-title {
+    animation: none;
+    white-space: normal;
+    width: auto;
+  }
+}
+
+/* Shared wallpaper and sea-glass treatment for modules with their own card markup. */
+/* stylelint-disable selector-class-pattern -- Match the established custom module IDs. */
+.MMM-MusicPlayer .music-player,
+.MMM-WeatherCard .weather-card,
+.MMM-AIChat .ai-chat,
+.MMM-AIChat .ai-chat-toggle {
+  backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+  background: var(--glass-surface);
+  border-color: var(--glass-edge);
+  border-radius: var(--glass-radius);
+  box-shadow:
+    inset 0 1px 0 var(--glass-highlight),
+    var(--glass-shadow);
+}
+
+.MMM-MusicPlayer .music-player.is-expanded,
+.MMM-WeatherCard .weather-card.is-expanded {
+  background: var(--glass-surface-strong);
+}
+
+.MMM-AIChat .ai-chat-toggle:hover {
+  background: var(--glass-surface-strong);
+}
+/* stylelint-enable selector-class-pattern */

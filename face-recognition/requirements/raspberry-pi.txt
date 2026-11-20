@@ -1,0 +1,10 @@
+# Raspberry Pi OS Bookworm ARM64, system Python 3.11.
+# Picamera2/libcamera come from apt via --system-site-packages.
+# Keep NumPy 1.x for compatibility with Bookworm's camera binary extensions.
+--extra-index-url https://download.pytorch.org/whl/cpu
+numpy==1.26.4
+opencv-python==4.11.0.86
+torch==2.15.0+cpu
+torchvision==0.29.2+cpu
+ultralytics==8.4.211
+ncnn==1.0.20261020

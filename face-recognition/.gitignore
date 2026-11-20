@@ -1,0 +1,15 @@
+# Per-device Python environment and runtime output
+.venv/
+__pycache__/
+data/
+faces/
+outputs/
+build/
+
+# Identity samples stay local; publish the schema/example only.
+face_vectors/*
+!face_vectors/.gitkeep
+!face_vectors/names.example.json
+
+# Model download fragments; released inference weights are versioned.
+models/*.part

@@ -1,0 +1,70 @@
+.MMM-PoemDisplay {
+  font-family: KaiTi, STKaiti, "楷体", serif;
+  font-size: 18px;
+  line-height: 1.36;
+  margin-left: 0;
+  text-align: left;
+  width: 460px;
+}
+
+.MMM-PoemDisplay .poem-display {
+  box-sizing: border-box;
+  max-width: 460px;
+  overflow: visible;
+  text-align: left;
+  width: 460px;
+}
+
+.MMM-PoemDisplay .poem-title,
+.MMM-PoemDisplay .poem-author,
+.MMM-PoemDisplay .poem-line {
+  color: var(--color-text-bright);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.MMM-PoemDisplay .poem-author {
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.MMM-PoemDisplay .poem-body {
+  display: grid;
+  gap: 2px;
+  text-align: left;
+}
+
+.MMM-PoemDisplay .poem-body.ci {
+  gap: 1px;
+  text-align: left;
+}
+
+.MMM-PoemDisplay .poem-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.MMM-PoemDisplay .poem-nav-button {
+  appearance: none;
+  background: rgba(174, 183, 191, 0.12);
+  border: 1px solid rgba(174, 183, 191, 0.38);
+  border-radius: 4px;
+  color: var(--color-text);
+  cursor: pointer;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 13px;
+  line-height: 1;
+  display: inline-block;
+  padding: 6px 12px;
+}
+
+.MMM-PoemDisplay .poem-nav-button:hover,
+.MMM-PoemDisplay .poem-nav-button:focus {
+  background: rgba(244, 247, 250, 0.18);
+  color: var(--color-text-bright);
+  outline: none;
+}

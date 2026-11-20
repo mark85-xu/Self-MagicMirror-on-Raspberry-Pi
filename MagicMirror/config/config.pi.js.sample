@@ -1,0 +1,44 @@
+// Raspberry Pi deployment template. Replace /home/pi with your actual user directory.
+let config = {
+  address: "localhost",
+  port: 8080,
+  basePath: "/",
+  ipWhitelist: ["127.0.0.1", "::ffff:127.0.0.1", "::1"],
+  language: "zh-cn",
+  locale: "zh-CN",
+  timeFormat: 24,
+  units: "metric",
+  electronOptions: { fullscreen: true, frame: false, autoHideMenuBar: true },
+  modules: [
+    { module: "alert" },
+    { module: "clock", position: "top_left", config: { timeFormat: 24 } },
+    { module: "MMM-PiStatus", position: "bottom_right" },
+    { module: "MMM-QuoteDisplay", position: "lower_third" },
+    {
+      module: "MMM-WeatherCard",
+      position: "top_left",
+      disabled: true,
+      config: { useWeatherService: true },
+    },
+    {
+      module: "MMM-AIChat",
+      position: "fullscreen_above",
+      disabled: true,
+      config: { voiceChat: { enabled: false } },
+    },
+    {
+      module: "MMM-FaceRecognition",
+      position: "fullscreen_above",
+      disabled: true,
+      config: {
+        runtime: "cpp",
+        source: "picamera2",
+        projectRoot: "/home/pi/smart-mirror/face-recognition",
+        threshold: 0.5,
+        stableFrames: 3,
+        stableMs: 1000,
+      },
+    },
+  ],
+};
+if (typeof module !== "undefined") module.exports = config;
